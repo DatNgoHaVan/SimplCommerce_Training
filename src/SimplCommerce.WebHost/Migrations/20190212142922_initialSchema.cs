@@ -1,10 +1,10 @@
 ﻿using System;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace SimplCommerce.WebHost.Migrations
 {
-    public partial class SimplCommerce_v1_0_0 : Migration
+    public partial class initialSchema : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +13,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Name = table.Column<string>(maxLength: 450, nullable: false)
                 },
                 constraints: table =>
@@ -26,7 +26,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Name = table.Column<string>(maxLength: 450, nullable: false),
                     Slug = table.Column<string>(maxLength: 450, nullable: false),
                     Description = table.Column<string>(nullable: true),
@@ -43,7 +43,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Name = table.Column<string>(maxLength: 450, nullable: false)
                 },
                 constraints: table =>
@@ -56,7 +56,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Name = table.Column<string>(maxLength: 450, nullable: false)
                 },
                 constraints: table =>
@@ -69,7 +69,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Name = table.Column<string>(maxLength: 450, nullable: false)
                 },
                 constraints: table =>
@@ -82,7 +82,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Name = table.Column<string>(maxLength: 450, nullable: false),
                     IsPublished = table.Column<bool>(nullable: false),
                     IsSystem = table.Column<bool>(nullable: false)
@@ -97,7 +97,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Name = table.Column<string>(maxLength: 450, nullable: false),
                     IsDeleted = table.Column<bool>(nullable: false)
                 },
@@ -143,7 +143,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Name = table.Column<string>(maxLength: 450, nullable: false),
                     Description = table.Column<string>(nullable: true),
                     IsActive = table.Column<bool>(nullable: false),
@@ -176,7 +176,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Caption = table.Column<string>(maxLength: 450, nullable: true),
                     FileSize = table.Column<int>(nullable: false),
                     FileName = table.Column<string>(maxLength: 450, nullable: true),
@@ -192,7 +192,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Name = table.Column<string>(maxLength: 256, nullable: true),
                     NormalizedName = table.Column<string>(maxLength: 256, nullable: true),
                     ConcurrencyStamp = table.Column<string>(nullable: true)
@@ -207,7 +207,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Name = table.Column<string>(maxLength: 450, nullable: false),
                     Slug = table.Column<string>(maxLength: 450, nullable: false),
                     Description = table.Column<string>(nullable: true),
@@ -244,7 +244,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Name = table.Column<string>(maxLength: 450, nullable: false),
                     Description = table.Column<string>(nullable: true)
                 },
@@ -270,7 +270,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Name = table.Column<string>(maxLength: 450, nullable: false),
                     Slug = table.Column<string>(maxLength: 450, nullable: false),
                     MetaTitle = table.Column<string>(maxLength: 450, nullable: true),
@@ -307,7 +307,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Name = table.Column<string>(maxLength: 450, nullable: false),
                     Description = table.Column<string>(nullable: true),
                     IsActive = table.Column<bool>(nullable: false),
@@ -331,7 +331,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Name = table.Column<string>(maxLength: 450, nullable: false),
                     Description = table.Column<string>(nullable: true),
                     IsActive = table.Column<bool>(nullable: false),
@@ -351,7 +351,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     UserId = table.Column<long>(nullable: false),
                     ProductId = table.Column<long>(nullable: false),
                     LatestViewedOn = table.Column<DateTimeOffset>(nullable: false)
@@ -366,7 +366,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     QueryText = table.Column<string>(maxLength: 500, nullable: false),
                     ResultsCount = table.Column<int>(nullable: false),
                     CreatedOn = table.Column<DateTimeOffset>(nullable: false)
@@ -401,7 +401,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Name = table.Column<string>(maxLength: 450, nullable: false)
                 },
                 constraints: table =>
@@ -414,7 +414,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     ActivityTypeId = table.Column<long>(nullable: false),
                     UserId = table.Column<long>(nullable: false),
                     CreatedOn = table.Column<DateTimeOffset>(nullable: false),
@@ -437,7 +437,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Name = table.Column<string>(maxLength: 450, nullable: false),
                     GroupId = table.Column<long>(nullable: false)
                 },
@@ -445,7 +445,7 @@ namespace SimplCommerce.WebHost.Migrations
                 {
                     table.PrimaryKey("PK_Catalog_ProductAttribute", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Catalog_ProductAttribute_Catalog_ProductAttributeGroup_GroupId",
+                        name: "FK_Catalog_ProductAttribute_Catalog_ProductAttributeGroup_Grou~",
                         column: x => x.GroupId,
                         principalTable: "Catalog_ProductAttributeGroup",
                         principalColumn: "Id",
@@ -457,7 +457,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     FullName = table.Column<string>(maxLength: 450, nullable: true),
                     PhoneNumber = table.Column<string>(maxLength: 450, nullable: true),
                     EmailAddress = table.Column<string>(maxLength: 450, nullable: true),
@@ -483,7 +483,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     CountryId = table.Column<string>(maxLength: 450, nullable: true),
                     Code = table.Column<string>(maxLength: 450, nullable: true),
                     Name = table.Column<string>(maxLength: 450, nullable: false),
@@ -505,7 +505,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Slug = table.Column<string>(maxLength: 450, nullable: false),
                     Name = table.Column<string>(maxLength: 450, nullable: false),
                     EntityId = table.Column<long>(nullable: false),
@@ -527,7 +527,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Name = table.Column<string>(maxLength: 450, nullable: false),
                     Slug = table.Column<string>(maxLength: 450, nullable: false),
                     MetaTitle = table.Column<string>(maxLength: 450, nullable: true),
@@ -563,7 +563,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     RoleId = table.Column<long>(nullable: false),
                     ClaimType = table.Column<string>(nullable: true),
                     ClaimValue = table.Column<string>(nullable: true)
@@ -584,7 +584,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Name = table.Column<string>(maxLength: 450, nullable: true),
                     CreatedOn = table.Column<DateTimeOffset>(nullable: false),
                     LatestUpdatedOn = table.Column<DateTimeOffset>(nullable: false),
@@ -618,7 +618,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Key = table.Column<string>(maxLength: 450, nullable: false),
                     Value = table.Column<string>(nullable: true),
                     CultureId = table.Column<string>(nullable: false)
@@ -651,7 +651,7 @@ namespace SimplCommerce.WebHost.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Pricing_CartRuleCustomerGroup_Core_CustomerGroup_CustomerGroupId",
+                        name: "FK_Pricing_CartRuleCustomerGroup_Core_CustomerGroup_CustomerGr~",
                         column: x => x.CustomerGroupId,
                         principalTable: "Core_CustomerGroup",
                         principalColumn: "Id",
@@ -663,7 +663,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     CartRuleId = table.Column<long>(nullable: false),
                     Code = table.Column<string>(maxLength: 450, nullable: false),
                     CreatedOn = table.Column<DateTimeOffset>(nullable: false)
@@ -690,13 +690,13 @@ namespace SimplCommerce.WebHost.Migrations
                 {
                     table.PrimaryKey("PK_Pricing_CatalogRuleCustomerGroup", x => new { x.CatalogRuleId, x.CustomerGroupId });
                     table.ForeignKey(
-                        name: "FK_Pricing_CatalogRuleCustomerGroup_Pricing_CatalogRule_CatalogRuleId",
+                        name: "FK_Pricing_CatalogRuleCustomerGroup_Pricing_CatalogRule_Catalo~",
                         column: x => x.CatalogRuleId,
                         principalTable: "Pricing_CatalogRule",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Pricing_CatalogRuleCustomerGroup_Core_CustomerGroup_CustomerGroupId",
+                        name: "FK_Pricing_CatalogRuleCustomerGroup_Core_CustomerGroup_Custome~",
                         column: x => x.CustomerGroupId,
                         principalTable: "Core_CustomerGroup",
                         principalColumn: "Id",
@@ -714,13 +714,13 @@ namespace SimplCommerce.WebHost.Migrations
                 {
                     table.PrimaryKey("PK_Catalog_ProductTemplateProductAttribute", x => new { x.ProductTemplateId, x.ProductAttributeId });
                     table.ForeignKey(
-                        name: "FK_Catalog_ProductTemplateProductAttribute_Catalog_ProductAttribute_ProductAttributeId",
+                        name: "FK_Catalog_ProductTemplateProductAttribute_Catalog_ProductAttr~",
                         column: x => x.ProductAttributeId,
                         principalTable: "Catalog_ProductAttribute",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Catalog_ProductTemplateProductAttribute_Catalog_ProductTemplate_ProductTemplateId",
+                        name: "FK_Catalog_ProductTemplateProductAttribute_Catalog_ProductTemp~",
                         column: x => x.ProductTemplateId,
                         principalTable: "Catalog_ProductTemplate",
                         principalColumn: "Id",
@@ -732,7 +732,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     StateOrProvinceId = table.Column<long>(nullable: false),
                     Name = table.Column<string>(maxLength: 450, nullable: false),
                     Type = table.Column<string>(maxLength: 450, nullable: true),
@@ -754,7 +754,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     TaxClassId = table.Column<long>(nullable: false),
                     CountryId = table.Column<string>(maxLength: 450, nullable: true),
                     StateOrProvinceId = table.Column<long>(nullable: true),
@@ -789,7 +789,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     ParentId = table.Column<long>(nullable: true),
                     MenuId = table.Column<long>(nullable: false),
                     EntityId = table.Column<long>(nullable: true),
@@ -849,7 +849,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     ContactName = table.Column<string>(maxLength: 450, nullable: true),
                     Phone = table.Column<string>(maxLength: 450, nullable: true),
                     AddressLine1 = table.Column<string>(maxLength: 450, nullable: true),
@@ -888,7 +888,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     ContactName = table.Column<string>(maxLength: 450, nullable: true),
                     Phone = table.Column<string>(maxLength: 450, nullable: true),
                     AddressLine1 = table.Column<string>(maxLength: 450, nullable: true),
@@ -927,7 +927,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     CountryId = table.Column<string>(maxLength: 450, nullable: true),
                     StateOrProvinceId = table.Column<long>(nullable: true),
                     DistrictId = table.Column<long>(nullable: true),
@@ -946,13 +946,13 @@ namespace SimplCommerce.WebHost.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_ShippingTableRate_PriceAndDestination_Core_District_DistrictId",
+                        name: "FK_ShippingTableRate_PriceAndDestination_Core_District_Distric~",
                         column: x => x.DistrictId,
                         principalTable: "Core_District",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_ShippingTableRate_PriceAndDestination_Core_StateOrProvince_StateOrProvinceId",
+                        name: "FK_ShippingTableRate_PriceAndDestination_Core_StateOrProvince_~",
                         column: x => x.StateOrProvinceId,
                         principalTable: "Core_StateOrProvince",
                         principalColumn: "Id",
@@ -964,7 +964,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Name = table.Column<string>(maxLength: 450, nullable: false),
                     AddressId = table.Column<long>(nullable: false),
                     VendorId = table.Column<long>(nullable: true)
@@ -991,7 +991,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Name = table.Column<string>(maxLength: 450, nullable: false),
                     Slug = table.Column<string>(maxLength: 450, nullable: false),
                     MetaTitle = table.Column<string>(maxLength: 450, nullable: true),
@@ -1058,7 +1058,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     AttributeId = table.Column<long>(nullable: false),
                     ProductId = table.Column<long>(nullable: false),
                     Value = table.Column<string>(nullable: true)
@@ -1067,7 +1067,7 @@ namespace SimplCommerce.WebHost.Migrations
                 {
                     table.PrimaryKey("PK_Catalog_ProductAttributeValue", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Catalog_ProductAttributeValue_Catalog_ProductAttribute_AttributeId",
+                        name: "FK_Catalog_ProductAttributeValue_Catalog_ProductAttribute_Attr~",
                         column: x => x.AttributeId,
                         principalTable: "Catalog_ProductAttribute",
                         principalColumn: "Id",
@@ -1085,7 +1085,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     IsFeaturedProduct = table.Column<bool>(nullable: false),
                     DisplayOrder = table.Column<int>(nullable: false),
                     CategoryId = table.Column<long>(nullable: false),
@@ -1113,7 +1113,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     ProductId = table.Column<long>(nullable: false),
                     LinkedProductId = table.Column<long>(nullable: false),
                     LinkType = table.Column<int>(nullable: false)
@@ -1140,7 +1140,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     ProductId = table.Column<long>(nullable: false),
                     MediaId = table.Column<long>(nullable: false),
                     DisplayOrder = table.Column<int>(nullable: false)
@@ -1167,7 +1167,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     ProductId = table.Column<long>(nullable: false),
                     OptionId = table.Column<long>(nullable: false),
                     Value = table.Column<string>(maxLength: 450, nullable: true),
@@ -1177,7 +1177,7 @@ namespace SimplCommerce.WebHost.Migrations
                 {
                     table.PrimaryKey("PK_Catalog_ProductOptionCombination", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Catalog_ProductOptionCombination_Catalog_ProductOption_OptionId",
+                        name: "FK_Catalog_ProductOptionCombination_Catalog_ProductOption_Opti~",
                         column: x => x.OptionId,
                         principalTable: "Catalog_ProductOption",
                         principalColumn: "Id",
@@ -1195,7 +1195,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     OptionId = table.Column<long>(nullable: false),
                     ProductId = table.Column<long>(nullable: false),
                     Value = table.Column<string>(maxLength: 450, nullable: true),
@@ -1224,7 +1224,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     ProductId = table.Column<long>(nullable: false),
                     WarehouseId = table.Column<long>(nullable: false),
                     Quantity = table.Column<int>(nullable: false),
@@ -1276,7 +1276,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     ProductId = table.Column<long>(nullable: true),
                     CreatedById = table.Column<long>(nullable: false),
                     CreatedOn = table.Column<DateTimeOffset>(nullable: false),
@@ -1302,7 +1302,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     ProductId = table.Column<long>(nullable: false),
                     WarehouseId = table.Column<long>(nullable: false),
                     CreatedOn = table.Column<DateTimeOffset>(nullable: false),
@@ -1332,7 +1332,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     OrderId = table.Column<long>(nullable: true),
                     ProductId = table.Column<long>(nullable: false),
                     ProductPrice = table.Column<decimal>(nullable: false),
@@ -1357,7 +1357,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     CreatedOn = table.Column<DateTimeOffset>(nullable: false),
                     UserId = table.Column<long>(nullable: false),
                     ProductId = table.Column<long>(nullable: false)
@@ -1378,7 +1378,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     ShipmentId = table.Column<long>(nullable: false),
                     OrderItemId = table.Column<long>(nullable: false),
                     ProductId = table.Column<long>(nullable: false),
@@ -1400,7 +1400,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     CreatedOn = table.Column<DateTimeOffset>(nullable: false),
                     ProductId = table.Column<long>(nullable: false),
                     Quantity = table.Column<int>(nullable: false),
@@ -1422,7 +1422,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     WishListId = table.Column<long>(nullable: false),
                     ProductId = table.Column<long>(nullable: false),
                     Description = table.Column<string>(nullable: true),
@@ -1446,7 +1446,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     UserId = table.Column<long>(nullable: false),
                     AddressId = table.Column<long>(nullable: false),
                     AddressType = table.Column<int>(nullable: false),
@@ -1468,7 +1468,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     UserName = table.Column<string>(maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(maxLength: 256, nullable: true),
                     Email = table.Column<string>(maxLength: 256, nullable: true),
@@ -1523,7 +1523,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Name = table.Column<string>(maxLength: 450, nullable: false),
                     Slug = table.Column<string>(maxLength: 450, nullable: false),
                     MetaTitle = table.Column<string>(maxLength: 450, nullable: true),
@@ -1560,7 +1560,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     UserId = table.Column<long>(nullable: false),
                     CommentText = table.Column<string>(nullable: true),
                     CommenterName = table.Column<string>(maxLength: 450, nullable: true),
@@ -1616,7 +1616,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     UserId = table.Column<long>(nullable: false),
                     ClaimType = table.Column<string>(nullable: true),
                     ClaimValue = table.Column<string>(nullable: true)
@@ -1701,7 +1701,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Name = table.Column<string>(maxLength: 450, nullable: false),
                     Slug = table.Column<string>(maxLength: 450, nullable: false),
                     MetaTitle = table.Column<string>(maxLength: 450, nullable: true),
@@ -1746,7 +1746,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     CustomerId = table.Column<long>(nullable: false),
                     LatestUpdatedOn = table.Column<DateTimeOffset>(nullable: false),
                     LatestUpdatedById = table.Column<long>(nullable: false),
@@ -1817,7 +1817,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     CartRuleId = table.Column<long>(nullable: false),
                     CouponId = table.Column<long>(nullable: true),
                     UserId = table.Column<long>(nullable: false),
@@ -1852,7 +1852,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     UserId = table.Column<long>(nullable: false),
                     Title = table.Column<string>(maxLength: 450, nullable: true),
                     Comment = table.Column<string>(nullable: true),
@@ -1879,7 +1879,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     CustomerId = table.Column<long>(nullable: false),
                     CreatedById = table.Column<long>(nullable: false),
                     CreatedOn = table.Column<DateTimeOffset>(nullable: false),
@@ -1916,7 +1916,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     UserId = table.Column<long>(nullable: false),
                     SharingCode = table.Column<string>(maxLength: 450, nullable: true),
                     CreatedOn = table.Column<DateTimeOffset>(nullable: false),
@@ -1962,7 +1962,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     OrderId = table.Column<long>(nullable: false),
                     OldStatus = table.Column<int>(nullable: true),
                     NewStatus = table.Column<int>(nullable: false),
@@ -1993,7 +1993,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     OrderId = table.Column<long>(nullable: false),
                     CreatedOn = table.Column<DateTimeOffset>(nullable: false),
                     LatestUpdatedOn = table.Column<DateTimeOffset>(nullable: false),
@@ -2020,7 +2020,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     OrderId = table.Column<long>(nullable: false),
                     TrackingNumber = table.Column<string>(maxLength: 450, nullable: true),
                     WarehouseId = table.Column<long>(nullable: false),
@@ -2057,7 +2057,7 @@ namespace SimplCommerce.WebHost.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     ReviewId = table.Column<long>(nullable: false),
                     UserId = table.Column<long>(nullable: false),
                     Comment = table.Column<string>(nullable: true),
@@ -2224,12 +2224,11 @@ namespace SimplCommerce.WebHost.Migrations
             migrationBuilder.InsertData(
                 table: "Core_StateOrProvince",
                 columns: new[] { "Id", "Code", "CountryId", "Name", "Type" },
-                values: new object[] { 1L, null, "VN", "Hồ Chí Minh", "Thành Phố" });
-
-            migrationBuilder.InsertData(
-                table: "Core_StateOrProvince",
-                columns: new[] { "Id", "Code", "CountryId", "Name", "Type" },
-                values: new object[] { 2L, "WA", "US", "Washington", null });
+                values: new object[,]
+                {
+                    { 1L, null, "VN", "Hồ Chí Minh", "Thành Phố" },
+                    { 2L, "WA", "US", "Washington", null }
+                });
 
             migrationBuilder.InsertData(
                 table: "Core_UserRole",
@@ -2244,12 +2243,11 @@ namespace SimplCommerce.WebHost.Migrations
             migrationBuilder.InsertData(
                 table: "Core_District",
                 columns: new[] { "Id", "Location", "Name", "StateOrProvinceId", "Type" },
-                values: new object[] { 1L, null, "Quận 1", 1L, "Quận" });
-
-            migrationBuilder.InsertData(
-                table: "Core_District",
-                columns: new[] { "Id", "Location", "Name", "StateOrProvinceId", "Type" },
-                values: new object[] { 2L, null, "Quận 2", 1L, "Quận" });
+                values: new object[,]
+                {
+                    { 1L, null, "Quận 1", 1L, "Quận" },
+                    { 2L, null, "Quận 2", 1L, "Quận" }
+                });
 
             migrationBuilder.InsertData(
                 table: "Inventory_Warehouse",
@@ -2456,8 +2454,7 @@ namespace SimplCommerce.WebHost.Migrations
                 name: "RoleNameIndex",
                 table: "Core_Role",
                 column: "NormalizedName",
-                unique: true,
-                filter: "[NormalizedName] IS NOT NULL");
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Core_RoleClaim_RoleId",
@@ -2488,8 +2485,7 @@ namespace SimplCommerce.WebHost.Migrations
                 name: "UserNameIndex",
                 table: "Core_User",
                 column: "NormalizedUserName",
-                unique: true,
-                filter: "[NormalizedUserName] IS NOT NULL");
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Core_User_VendorId",
