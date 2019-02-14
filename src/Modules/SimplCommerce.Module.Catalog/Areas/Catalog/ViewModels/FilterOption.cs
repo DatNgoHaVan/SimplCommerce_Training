@@ -9,5 +9,7 @@ namespace SimplCommerce.Module.Catalog.Areas.Catalog.ViewModels
         public IList<FilterCategory> Categories { get; set; } = new List<FilterCategory>();
 
         public FilterPrice Price { get; set; } = new FilterPrice();
+
+        public FilterRating Rating { get; set; } = new FilterRating();
     }
 }

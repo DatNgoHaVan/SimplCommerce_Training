@@ -250,6 +250,26 @@ li.nav-item-group, li.nav-item-group a {
     margin-top: 15px;
 }
 
+#ratingSlider {
+    margin: 17px
+}
+
+#minRating {
+    width: 80px;
+    float: left;
+}
+
+#maxRating {
+    width: 80px;
+    float: right;
+    text-align: right;
+}
+
+.rating-actions {
+    float: right;
+    margin-top: 15px;
+}
+
 .category-result h2 {
     float: left;
     font-size: 30px;

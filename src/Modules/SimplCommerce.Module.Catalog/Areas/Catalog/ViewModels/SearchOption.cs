@@ -24,6 +24,9 @@ namespace SimplCommerce.Module.Catalog.Areas.Catalog.ViewModels
 
         public int? MaxPrice { get; set; }
 
+        public int? MinRating { get; set; }
+
+        public int? MaxRating { get; set; }
         public Dictionary<string, string> ToDictionary()
         {
             var dict = new Dictionary<string, string>();
@@ -55,6 +58,16 @@ namespace SimplCommerce.Module.Catalog.Areas.Catalog.ViewModels
             if (!string.IsNullOrWhiteSpace(Sort))
             {
                 dict.Add("sort", Sort);
+            }
+
+            if(MinRating.HasValue)
+            {
+                dict.Add("minRating", MinRating.Value.ToString());
+            }
+
+            if(MaxRating.HasValue)
+            {
+                dict.Add("maxRating", MaxRating.Value.ToString());
             }
 
             return dict;

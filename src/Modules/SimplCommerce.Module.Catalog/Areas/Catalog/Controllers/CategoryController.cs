@@ -78,6 +78,16 @@ namespace SimplCommerce.Module.Catalog.Areas.Catalog.Controllers
             {
                 query = query.Where(x => x.Price <= searchOption.MaxPrice.Value);
             }
+            //insert min max rating
+            if (searchOption.MinRating.HasValue)
+            {
+                query = query.Where(x => x.RatingAverage >= searchOption.MinRating.Value);
+            }
+
+            if (searchOption.MaxRating.HasValue)
+            {
+                query = query.Where(x => x.RatingAverage <= searchOption.MaxRating.Value);
+            }
 
             var brands = searchOption.GetBrands();
             if (brands.Any())
@@ -111,6 +121,7 @@ namespace SimplCommerce.Module.Catalog.Areas.Catalog.Controllers
             {
                 product.ThumbnailUrl = _mediaService.GetThumbnailUrl(product.ThumbnailImage);
                 product.CalculatedProductPrice = _productPricingService.CalculateProductPrice(product);
+                
             }
 
             model.Products = products;
@@ -128,6 +139,9 @@ namespace SimplCommerce.Module.Catalog.Areas.Catalog.Controllers
                 case "price-desc":
                     query = query.OrderByDescending(x => x.Price);
                     break;
+                case "rating-desc":
+                    query = query.OrderByDescending(x => x.RatingAverage);
+                    break;
                 default:
                     query = query.OrderBy(x => x.Price);
                     break;
@@ -140,6 +154,9 @@ namespace SimplCommerce.Module.Catalog.Areas.Catalog.Controllers
         {
             model.FilterOption.Price.MaxPrice = query.Max(x => x.Price);
             model.FilterOption.Price.MinPrice = query.Min(x => x.Price);
+
+            model.FilterOption.Rating.MaxRating = query.Max(x => x.RatingAverage);
+            model.FilterOption.Rating.MinRating = query.Min(x => x.RatingAverage);
 
             model.FilterOption.Brands = query
                 .Where(x => x.BrandId != null)

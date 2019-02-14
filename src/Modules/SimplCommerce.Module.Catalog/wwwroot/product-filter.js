@@ -1,5 +1,5 @@
 ﻿/*global jQuery, noUiSlider, wNumb, window, document, productFilter*/
-(function ($, currentSearchOption, priceSetting) {
+(function ($, currentSearchOption, priceSetting, ratingSetting) {
     $(function () {
         function createUrl() {
             var key,
@@ -70,6 +70,52 @@
             });
         }
 
+        function initRatingSlider() {
+            var ratingSlider = document.getElementById('ratingSlider');
+            if (!ratingSlider) {
+                return;
+            }
+            var ratingValues = [
+                document.getElementById('minRating'),
+                document.getElementById('maxRating')
+            ];
+
+            noUiSlider2.create(ratingSlider, {
+                connect: true,
+                start: [ratingSetting.currentMin, ratingSetting.currentMax],
+                range: {
+                    'min': ratingSetting.min,
+                    'max': ratingSetting.max
+                },
+                format: wNumb({
+                    decimals: 3,
+                    thousand: '.'
+                })
+            });
+
+            ratingSlider.noUiSlider2.on('update', function (values, handle) {
+                ratingValues[handle].innerHTML = values[handle];
+            });
+
+            ratingSlider.noUiSlider2.on('change', function () {
+                var min, max, ratings;
+                ratings = ratingSlider.noUiSlider2.get();
+                min = parseInt(ratings[0].replace(/\./g, ''), 10);
+                max = parseInt(ratings[1].replace(/\./g, ''), 10);
+                if (min !== ratingSetting.min) {
+                    currentSearchOption.minRating = min;
+                } else {
+                    currentSearchOption.minRating = null;
+                }
+                if (max !== ratingSetting.max) {
+                    currentSearchOption.maxRating = max;
+                } else {
+                    currentSearchOption.maxRating = null;
+                }
+                window.location = createUrl();
+            });
+        }
+
         $('#collapse-brand input:checkbox').on('change', function () {
             var index,
                 checkbox = $(this),
@@ -108,5 +154,6 @@
         });
 
         initPriceSlider();
+        initRatingSlider();
     });
-})(jQuery, productFilter.currentSearchOption, productFilter.priceSetting);
+})(jQuery, productFilter.currentSearchOption, productFilter.priceSetting, productFilter.ratingSetting);
