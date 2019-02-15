@@ -87,18 +87,19 @@
                         <div class="card-header" id="cardHeaderRating">
                             <h5 class="mb-0">
                                 <a data-toggle="collapse" href="#collapse-rating" aria-expanded="true" aria-control="collapse-rating">
-                                    @Localizer["Rating"]
+                                    @Localizer["AverageRating"]
                                     <i class="fa fa-angle-down"></i>
                                 </a>
                             </h5>
                         </div>
                         <div id="collapse-rating" class="collapse show" aria-labelledby="cardHeaderRating" data-parent="#accordion-rating">
                             <div class="card-body">
-                                <div id="ratingSlider"></div>
+                                <div id="ratingSlider">
+                                </div>
                                 <div>
-                                    <input type="hidden" id="originMinRating" value="@Model.FilterOption.Rating.MinRating" />
-                                    <input type="hidden" id="originMaxRating" value="@Model.FilterOption.Rating.MaxRating" />
-                                    <span id="minRating"></span>
+                                    <input type="hidden" id="originMinRating" value="@Model.FilterOption.AverageRating.MinRating.ToString()" />
+                                    <input type="hidden" id="originMaxRating" value="@Model.FilterOption.AverageRating.MaxRating.ToString()" />
+                                    <span id="minRating"><script>console.log(minRating)</script></span>
                                     <span id="maxRating"></span>
                                 </div>
                             </div>
@@ -173,6 +174,12 @@
             currentMin: @((Model.CurrentSearchOption.MinPrice ?? Model.FilterOption.Price.MinPrice).ToString("F0")),
             currentMax: @((Model.CurrentSearchOption.MaxPrice ?? Model.FilterOption.Price.MaxPrice).ToString("F0"))
         };
+        productFilter.ratingSetting = {
+            min: @Model.FilterOption.AverageRating.MinRating.ToString(),
+            max: @Model.FilterOption.AverageRating.MaxRating.ToString(),
+            currentMin: @((Model.CurrentSearchOption.MinRating ?? Model.FilterOption.AverageRating.MinRating).ToString()),
+            currentMax: @((Model.CurrentSearchOption.MaxRating ?? Model.FilterOption.AverageRating.MaxRating).ToString())
+        }
     </script>
     <script simpl-append-version="true" src="~/modules/catalog/product-filter.js"></script>
 }

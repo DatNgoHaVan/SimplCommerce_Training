@@ -24,9 +24,9 @@ namespace SimplCommerce.Module.Catalog.Areas.Catalog.ViewModels
 
         public int? MaxPrice { get; set; }
 
-        public int? MinRating { get; set; }
+        public double? MinRating { get; set; }
 
-        public int? MaxRating { get; set; }
+        public double? MaxRating { get; set; }
         public Dictionary<string, string> ToDictionary()
         {
             var dict = new Dictionary<string, string>();
@@ -59,7 +59,7 @@ namespace SimplCommerce.Module.Catalog.Areas.Catalog.ViewModels
             {
                 dict.Add("sort", Sort);
             }
-
+            //insert rating
             if(MinRating.HasValue)
             {
                 dict.Add("minRating", MinRating.Value.ToString());

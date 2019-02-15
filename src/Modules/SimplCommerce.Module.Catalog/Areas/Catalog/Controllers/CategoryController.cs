@@ -139,9 +139,6 @@ namespace SimplCommerce.Module.Catalog.Areas.Catalog.Controllers
                 case "price-desc":
                     query = query.OrderByDescending(x => x.Price);
                     break;
-                case "rating-desc":
-                    query = query.OrderByDescending(x => x.RatingAverage);
-                    break;
                 default:
                     query = query.OrderBy(x => x.Price);
                     break;
@@ -155,8 +152,8 @@ namespace SimplCommerce.Module.Catalog.Areas.Catalog.Controllers
             model.FilterOption.Price.MaxPrice = query.Max(x => x.Price);
             model.FilterOption.Price.MinPrice = query.Min(x => x.Price);
 
-            model.FilterOption.Rating.MaxRating = query.Max(x => x.RatingAverage);
-            model.FilterOption.Rating.MinRating = query.Min(x => x.RatingAverage);
+            model.FilterOption.AverageRating.MaxRating = query.Max(x => x.RatingAverage);
+            model.FilterOption.AverageRating.MinRating = query.Min(x => x.RatingAverage);
 
             model.FilterOption.Brands = query
                 .Where(x => x.BrandId != null)

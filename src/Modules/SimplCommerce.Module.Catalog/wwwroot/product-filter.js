@@ -80,26 +80,26 @@
                 document.getElementById('maxRating')
             ];
 
-            noUiSlider2.create(ratingSlider, {
+            noUiSlider.create(ratingSlider, {
                 connect: true,
                 start: [ratingSetting.currentMin, ratingSetting.currentMax],
                 range: {
                     'min': ratingSetting.min,
                     'max': ratingSetting.max
-                },
-                format: wNumb({
-                    decimals: 3,
-                    thousand: '.'
-                })
+                }
+                // format: wNumb({
+                //     decimals: 2,
+                //     thousand: '.'
+                //})
             });
 
-            ratingSlider.noUiSlider2.on('update', function (values, handle) {
+            ratingSlider.noUiSlider.on('update', function (values, handle) {
                 ratingValues[handle].innerHTML = values[handle];
             });
 
-            ratingSlider.noUiSlider2.on('change', function () {
+            ratingSlider.noUiSlider.on('change', function () {
                 var min, max, ratings;
-                ratings = ratingSlider.noUiSlider2.get();
+                ratings = ratingSlider.noUiSlider.get();
                 min = parseInt(ratings[0].replace(/\./g, ''), 10);
                 max = parseInt(ratings[1].replace(/\./g, ''), 10);
                 if (min !== ratingSetting.min) {

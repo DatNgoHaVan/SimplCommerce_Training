@@ -10,6 +10,6 @@ namespace SimplCommerce.Module.Catalog.Areas.Catalog.ViewModels
 
         public FilterPrice Price { get; set; } = new FilterPrice();
 
-        public FilterRating Rating { get; set; } = new FilterRating();
+        public FilterRating AverageRating { get; set; } = new FilterRating();
     }
 }

@@ -82,6 +82,17 @@ namespace SimplCommerce.Module.Search.Areas.Search.Controllers
                 query = query.Where(x => x.Price <= searchOption.MaxPrice.Value);
             }
 
+            //insert rating
+            if (searchOption.MinRating.HasValue)
+            {
+                query = query.Where(x => x.RatingAverage >= searchOption.MinRating.Value);
+            }
+
+            if(searchOption.MaxRating.HasValue)
+            {
+                query = query.Where(x => x.RatingAverage <= searchOption.MaxRating.Value);
+            }
+
             if (string.Compare(model.CurrentSearchOption.Category, "all", StringComparison.OrdinalIgnoreCase) != 0)
             {
                 var categories = searchOption.GetCategories();
@@ -154,6 +165,10 @@ namespace SimplCommerce.Module.Search.Areas.Search.Controllers
         {
             model.FilterOption.Price.MaxPrice = query.Max(x => x.Price);
             model.FilterOption.Price.MinPrice = query.Min(x => x.Price);
+
+            //insert rating
+            model.FilterOption.AverageRating.MinRating = query.Min(x => x.RatingAverage);
+            model.FilterOption.AverageRating.MaxRating = query.Max(x => x.RatingAverage);
 
             model.FilterOption.Categories = query
                 .SelectMany(x => x.Categories)

@@ -64,6 +64,30 @@
                 </div>
             </div>
             }
+            <div id="accordion-rating" class="mt-4">
+                    <div class="card">
+                        <div class="card-header" id="cardHeaderRating">
+                            <h5 class="mb-0">
+                                <a data-toggle="collapse" href="#collapse-rating" aria-expanded="true" aria-control="collapse-rating">
+                                    @Localizer["AverageRating"]
+                                    <i class="fa fa-angle-down"></i>
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="collapse-rating" class="collapse show" aria-labelledby="cardHeaderRating" data-parent="#accordion-rating">
+                            <div class="card-body">
+                                <div id="ratingSlider"></div>
+                                <div>
+                                    <input type="hidden" id="originMinRating" value="@Model.FilterOption.AverageRating.MinRating.ToString()" />
+                                    <input type="hidden" id="originMaxRating" value="@Model.FilterOption.AverageRating.MaxRating.ToString()" />
+                                    <span id="minRating"></span>
+                                    <span id="maxRating"></span>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
         </form>
     </div>
     <div class="col-md-9">
